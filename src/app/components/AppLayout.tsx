@@ -7,9 +7,14 @@ interface AppLayoutProps {
 
 const StyledContainer = styled.div`
   border: 1px solid indianred;
-  width: 40vw;
-  height: 100vh;
+  width: 40dvw;
+  height: 100dvh;
   margin-left: 30vw;
+
+  @media (max-width: 1023px) {
+    margin-left: 0;
+    width: 100dvw;
+  }
 `;
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
