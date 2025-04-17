@@ -49,7 +49,10 @@ const StyledSubHeader = styled.h3`
   font-size: ${(props) => props.theme.font.size.md};
   font-weight: ${(props) => props.theme.font.weight.regular};
   box-shadow: 0 20px ${(props) => props.theme.background.green};
+  margin-bottom: ${(props) => props.theme.spacing["2xl"]};
 `;
+
+const StyledSection = styled.section``;
 
 export const Portfolio = () => {
   return (
@@ -74,7 +77,9 @@ export const Portfolio = () => {
           integrations, marketplace apps and could be the best choice for your
           needs.
         </StyledParagraph>
-        <StyledSubHeader>Experience</StyledSubHeader>
+        <StyledSection>
+          <StyledSubHeader>Experience</StyledSubHeader>
+        </StyledSection>
       </StyledMain>
     </StyledContainer>
   );
