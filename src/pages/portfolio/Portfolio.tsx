@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router";
+import { ProfileLink } from "./ProfileLink";
 
 const StyledContainer = styled.div`
   padding: ${(props) =>
@@ -31,49 +31,18 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledLink = styled(Link)`
-  font-size: ${(props) => props.theme.font.size.sm};
-  color: ${(props) => props.theme.font.color.secondary};
-  text-decoration: none;
-  font-weight: ${(props) => props.theme.font.weight.medium};
-  padding: ${(props) => `0 ${props.theme.spacing.xs}`};
-
-  &:hover {
-    background-color: ${(props) => props.theme.background.green};
-  }
-`;
-
-const StyledDiv = styled.div``;
-
 export const Portfolio = () => {
   return (
     <StyledContainer>
       <StyledHeader>Nabhag Motivaras</StyledHeader>
       <StyledSubHeading>Full Stack Engineer</StyledSubHeading>
       <StyledNav>
-        <StyledDiv>
-          <StyledLink to="https://github.com/Nabhag8848" target="_blank">
-            Github
-          </StyledLink>
-        </StyledDiv>
-        <StyledDiv>
-          <StyledLink to="https://x.com/NabhagMotivaras" target="_blank">
-            Twitter
-          </StyledLink>
-        </StyledDiv>
-        <StyledDiv>
-          <StyledLink
-            to="https://linkedin.com/in/nabhagmotivaras"
-            target="_blank"
-          >
-            LinkedIn
-          </StyledLink>
-        </StyledDiv>
-        <StyledDiv>
-          <StyledLink to="mailto:motivaras.nabhag@gmail.com" target="_blank">
-            Mail
-          </StyledLink>
-        </StyledDiv>
+        <ProfileLink to="https://github.com/Nabhag8848">Github</ProfileLink>
+        <ProfileLink to="https://x.com/NabhagMotivaras">Twitter</ProfileLink>
+        <ProfileLink to="https://linkedin.com/in/nabhagmotivaras">
+          LinkedIn
+        </ProfileLink>
+        <ProfileLink to="mailto:motivaras.nabhag@gmail.com">Mail</ProfileLink>
       </StyledNav>
     </StyledContainer>
   );
