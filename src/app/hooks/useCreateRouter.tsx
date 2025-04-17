@@ -1,3 +1,4 @@
+import { Portfolio } from "@/pages/portfolio/Portfolio";
 import { AppRouterProviders } from "@app/components/AppRouterProviders";
 import { DefaultLayout } from "@ui/layout/components/DefaultLayout";
 import { AppPath } from "@utils/title";
@@ -9,7 +10,7 @@ export const useCreateRouter = () => {
     createRoutesFromElements(
       <Route element={<AppRouterProviders />}>
         <Route element={<DefaultLayout />}>
-          <Route path="/" element={<></>} />
+          <Route path="/" element={<Portfolio />} />
           <Route path={AppPath.HOME} element={<></>} />
           <Route path={AppPath.ABOUT} element={<></>} />
         </Route>

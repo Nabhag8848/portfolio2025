@@ -6,7 +6,6 @@ interface AppLayoutProps {
 }
 
 const StyledContainer = styled.div`
-  border: 1px solid indianred;
   width: 40dvw;
   height: 100dvh;
   margin-left: 30vw;

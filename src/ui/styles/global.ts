@@ -10,6 +10,10 @@ export const globalStyles = (theme: ThemeType) => () => {
       padding: 0,
       "box-sizing": "border-box",
     },
+    "*:focus": {
+      outline: `1px solid ${theme.background.green}`,
+      "outline-offset": "1px",
+    },
     body: {
       backgroundColor: theme.background.tertiary,
       "overflow-x": "hidden",
