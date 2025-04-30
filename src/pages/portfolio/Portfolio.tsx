@@ -45,7 +45,7 @@ const StyledParagraph = styled.p`
 `;
 
 const StyledSubParagraph = styled(StyledParagraph)`
-  font-size: ${(props) => props.theme.font.size.sm};
+  font-size: ${(props) => props.theme.font.size.xs};
 `;
 
 const StyledSubHeader = styled.h3`

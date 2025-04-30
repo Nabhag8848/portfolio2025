@@ -11,6 +11,10 @@ const StyledLink = styled(Link)`
   &:hover {
     background-color: ${(props) => props.theme.background.green};
   }
+
+  @media (max-width: 440px) {
+    font-size: ${(props) => props.theme.font.size.sm};
+  }
 `;
 
 const StyledDiv = styled.div`
