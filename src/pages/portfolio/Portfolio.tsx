@@ -134,6 +134,17 @@ export const Portfolio = () => {
               weekly Apps Engine workshops.
             </StyledSubParagraph>
           </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink to="https://neev.finance/">
+              Neev.Finance - ( May 2022 - Jun 2022 )
+            </HeaderLink>
+            <StyledSubParagraph>
+              Developed a real-time crypto analytics dashboard using WebSockets,
+              and NestJS (with Observer pattern). Integrated data feeds from
+              four major exchange (FTX, OKX, Binance, Huobi Global) and
+              implemented scheduled data storage using cron jobs.
+            </StyledSubParagraph>
+          </StyledSubSection>
         </StyledSection>
       </StyledMain>
     </StyledContainer>
