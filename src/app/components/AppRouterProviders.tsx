@@ -3,6 +3,7 @@ import { StrictMode } from "react";
 import { PageTitle } from "@ui/utils/PageTitle";
 import { ThemeProvider } from "@emotion/react";
 import { THEME_DARK } from "@ui/theme/dark";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const AppRouterProviders = () => {
   const theme = THEME_DARK;
@@ -14,6 +15,7 @@ export const AppRouterProviders = () => {
       <StrictMode>
         <PageTitle />
         <Outlet />
+        <SpeedInsights />
       </StrictMode>
     </ThemeProvider>
   );
