@@ -146,6 +146,28 @@ export const Portfolio = () => {
             </StyledSubParagraph>
           </StyledSubSection>
         </StyledSection>
+        <StyledSection>
+          <StyledSubHeader>Projects</StyledSubHeader>
+          <StyledSubSection>
+            <HeaderLink to="https://www.raycast.com/NabhagMotivaras/twenty">
+              Twenty Raycast Extension
+            </HeaderLink>
+            <StyledSubParagraph>
+              Raycast Extension for seamless twentyCRM management, enabling
+              users to instantly create records across both standard and custom
+              objects.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink to="https://github.com/Nabhag8848/CoverCraft">
+              CoverCraft - Figma x Hashnode
+            </HeaderLink>
+            <StyledSubParagraph>
+              CoverCraft lets you instantly set cover images in Hashnode Blog,
+              designed in Figma — no downloads, renaming, or platform switching.
+            </StyledSubParagraph>
+          </StyledSubSection>
+        </StyledSection>
       </StyledMain>
     </StyledContainer>
   );
