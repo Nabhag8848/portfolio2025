@@ -4,6 +4,7 @@ import { PageTitle } from "@ui/utils/PageTitle";
 import { ThemeProvider } from "@emotion/react";
 import { THEME_DARK } from "@ui/theme/dark";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { OpenGraphImage } from "@ui/utils/OpenGraphImage";
 
 export const AppRouterProviders = () => {
   const theme = THEME_DARK;
@@ -14,6 +15,7 @@ export const AppRouterProviders = () => {
     <ThemeProvider theme={theme}>
       <StrictMode>
         <PageTitle />
+        <OpenGraphImage />
         <Outlet />
         <SpeedInsights />
       </StrictMode>
