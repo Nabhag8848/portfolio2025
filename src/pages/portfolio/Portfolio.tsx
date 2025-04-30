@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { ProfileLink } from "./ProfileLink";
+import { HeaderLink } from "./HeaderLink";
 
 const StyledContainer = styled.div`
   padding: ${(props) =>
@@ -37,15 +38,18 @@ const StyledMain = styled.main``;
 
 const StyledParagraph = styled.p`
   color: ${(props) => props.theme.font.color.tertiary};
-  font-size: ${(props) => props.theme.font.size.sm};
   line-height: ${(props) => props.theme.text.lineHeight.paragraph};
   letter-spacing: ${(props) => props.theme.text.letterSpacing.wide};
-
+  font-size: ${(props) => props.theme.font.size.xs};
   margin-bottom: ${(props) => props.theme.spacing.xl};
 `;
 
+const StyledSubParagraph = styled(StyledParagraph)`
+  font-size: ${(props) => props.theme.font.size.sm};
+`;
+
 const StyledSubHeader = styled.h3`
-  color: ${(props) => props.theme.font.color.secondary};
+  color: ${(props) => props.theme.font.color.primary};
   font-size: ${(props) => props.theme.font.size.md};
   font-weight: ${(props) => props.theme.font.weight.regular};
   box-shadow: 0 20px ${(props) => props.theme.background.green};
@@ -53,6 +57,7 @@ const StyledSubHeader = styled.h3`
 `;
 
 const StyledSection = styled.section``;
+const StyledSubSection = styled.div``;
 
 export const Portfolio = () => {
   return (
@@ -79,6 +84,56 @@ export const Portfolio = () => {
         </StyledParagraph>
         <StyledSection>
           <StyledSubHeader>Experience</StyledSubHeader>
+          <StyledSubSection>
+            <HeaderLink to="https://www.rockethealth.app">
+              Rocket Health - ( Sep 2024 - May 2025 )
+            </HeaderLink>
+            <StyledSubParagraph>
+              Sole engineer behind building entire system powering 100K+ therapy
+              sessions and 40K+ users. Built event-driven system integrating
+              Typeform, Calendly, and Razorpay; migrated messy legacy data via
+              custom scripts; developed internal operation web app; and
+              automated key workflows for seamless operations.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink to="https://www.github.com/revertinc/revert">
+              Revert (now Ampersand) - ( May 2024 - Aug 2024 )
+            </HeaderLink>
+            <StyledSubParagraph>
+              Played a key role in building the new client-side, managing
+              production, and leading a full app migration. Contributed to
+              internal CRM SDKs and customized isomorphic JavaScript client SDKs
+              for customer needs. Set up the foundation for a webhook system and
+              maintained the codebase during critical periods. Conducted
+              integration code reviews to ensure product stability.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink to="https://summerofcode.withgoogle.com/archive/2023/projects/9v76k7Q8">
+              Google Summer of Code - ( May 2023 - Aug 2023 )
+            </HeaderLink>
+            <StyledSubParagraph>
+              Built Notion App for Rocket.Chat, enabling seamless collaboration
+              by allowing users to create, share, and interact with Notion pages
+              and databases directly within Rocket.Chat. Implemented OAuth2
+              authorization, multi-workspace support, message preservation, and
+              in-chat Notion tables viewing — all with a user-centric and
+              backward-compatible approach.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink to="https://github.com/Nabhag8848?tab=overview&from=2023-12-01&to=2023-12-31&org=RocketChat">
+              Rocket.Chat - ( Sep 2022 - May 2024 )
+            </HeaderLink>
+            <StyledSubParagraph>
+              Contributed to GitHub integration and resolved critical bugs in
+              Rocket.Chat. Authored a backward-compatible OAuth2 authorization
+              approach for RocketChat.Apps, Maintainer of the Notion
+              Integration, and actively supported new contributors through
+              weekly Apps Engine workshops.
+            </StyledSubParagraph>
+          </StyledSubSection>
         </StyledSection>
       </StyledMain>
     </StyledContainer>
