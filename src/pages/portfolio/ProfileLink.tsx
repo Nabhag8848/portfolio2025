@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { ReactNode } from "react";
-import { Link } from "react-router";
+import { SoundLink } from "@ui/components/SoundLink";
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(SoundLink)`
   font-size: ${(props) => props.theme.font.size.sm};
   color: ${(props) => props.theme.font.color.secondary};
   text-decoration: none;

@@ -1,4 +1,3 @@
-import { GRAY_SCALE } from "../colors/GrayScale";
 import { GREEN_SCALE } from "../colors/GreenScale";
 
 export const BACKGROUND_DARK = {

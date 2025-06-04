@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
 import { ReactNode } from "react";
-import { Link } from "react-router";
+import { SoundLink } from "@ui/components/SoundLink";
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(SoundLink)`
   font-size: ${(props) => props.theme.font.size.base};
   color: ${(props) => props.theme.font.color.secondary};
   text-decoration: none;
   font-weight: ${(props) => props.theme.font.weight.regular};
   position: relative;
   display: inline-block;
-  padding: ${(props) => `${props.theme.spacing.xs} ${props.theme.spacing.sm} ${props.theme.spacing.xs} 0`};
+  padding: ${(props) =>
+    `${props.theme.spacing.xs} ${props.theme.spacing.sm} ${props.theme.spacing.xs} 0`};
 
   &::after {
     content: "";
