@@ -4,8 +4,29 @@ import { HeaderLink } from "./HeaderLink";
 
 const StyledContainer = styled.div`
   padding: ${(props) =>
-    `${props.theme.spacing.xl} ${props.theme.spacing.base}`};
+    `${props.theme.spacing["2xl"]} ${props.theme.spacing.base}`};
   color: ${(props) => props.theme.font.color.tertiary};
+  max-width: 120rem;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    padding: ${(props) =>
+      `${props.theme.spacing.xl} ${props.theme.spacing.base}`};
+  }
 `;
 
 const StyledHeader = styled.h1`
@@ -13,6 +34,7 @@ const StyledHeader = styled.h1`
   font-weight: ${(props) => props.theme.font.weight.medium};
   font-size: ${(props) => props.theme.font.size.lg};
   margin-bottom: ${(props) => `${props.theme.spacing.lg}`};
+  letter-spacing: -0.05em;
 `;
 
 const StyledSubHeading = styled.h2`
@@ -26,7 +48,6 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-around;
   align-items: start;
-
   margin-bottom: ${(props) => `${props.theme.spacing.xl}`};
 
   @media (min-width: 1024px) {
@@ -41,7 +62,8 @@ const StyledParagraph = styled.p`
   line-height: ${(props) => props.theme.text.lineHeight.paragraph};
   letter-spacing: ${(props) => props.theme.text.letterSpacing.wide};
   font-size: ${(props) => props.theme.font.size.xs};
-  margin-bottom: ${(props) => props.theme.spacing.xl};
+  margin-bottom: ${(props) => props.theme.spacing["2xl"]};
+  max-width: 80ch;
 `;
 
 const StyledSubParagraph = styled(StyledParagraph)`
@@ -52,12 +74,33 @@ const StyledSubHeader = styled.h3`
   color: ${(props) => props.theme.font.color.primary};
   font-size: ${(props) => props.theme.font.size.md};
   font-weight: ${(props) => props.theme.font.weight.regular};
-  box-shadow: 0 20px ${(props) => props.theme.background.green};
+  position: relative;
+  display: inline-block;
   margin-bottom: ${(props) => props.theme.spacing["2xl"]};
+  padding-bottom: ${(props) => props.theme.spacing.sm};
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: ${(props) => props.theme.background.green};
+  }
 `;
 
-const StyledSection = styled.section``;
-const StyledSubSection = styled.div``;
+const StyledSection = styled.section`
+  margin-bottom: ${(props) => props.theme.spacing["3xl"]};
+`;
+
+const StyledSubSection = styled.div`
+  margin-bottom: ${(props) => props.theme.spacing["2xl"]};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
 
 export const Portfolio = () => {
   return (

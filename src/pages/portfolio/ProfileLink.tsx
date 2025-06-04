@@ -7,10 +7,27 @@ const StyledLink = styled(Link)`
   color: ${(props) => props.theme.font.color.secondary};
   text-decoration: none;
   font-weight: ${(props) => props.theme.font.weight.medium};
-  padding: ${(props) => `0 ${props.theme.spacing.xs}`};
+  padding: ${(props) => `${props.theme.spacing.xs} ${props.theme.spacing.sm}`};
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: ${(props) => props.theme.background.green};
+    transition: height 0.2s ease-in-out;
+    z-index: -1;
+    opacity: 0.2;
+  }
 
   &:hover {
-    background-color: ${(props) => props.theme.background.green};
+    background-color: transparent;
+    &::after {
+      height: 100%;
+    }
   }
 `;
 
