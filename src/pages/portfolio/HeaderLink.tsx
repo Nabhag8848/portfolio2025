@@ -1,36 +1,34 @@
 import styled from "@emotion/styled";
-import { ReactNode } from "react";
 import { SoundLink } from "@ui/components/SoundLink";
+
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: ${(props) => props.theme.spacing.base};
+  width: 100%;
+`;
 
 const StyledLink = styled(SoundLink)`
   font-size: ${(props) => props.theme.font.size.base};
-  color: ${(props) => props.theme.font.color.secondary};
+  color: ${(props) => props.theme.font.color.primary};
   text-decoration: none;
-  font-weight: ${(props) => props.theme.font.weight.regular};
+  font-weight: ${(props) => props.theme.font.weight.medium};
   position: relative;
   display: inline-block;
   padding: ${(props) =>
-    `${props.theme.spacing.xs} ${props.theme.spacing.sm} ${props.theme.spacing.xs} 0`};
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 100%;
-    left: 2%;
-    width: 95%;
-    height: 30%;
-    background-color: ${(props) => props.theme.background.green};
-    transition: height 0.2s ease-in-out;
-    z-index: -1;
-    opacity: 0.4;
-  }
+    `${props.theme.spacing.sm} ${props.theme.spacing.lg} ${props.theme.spacing.sm} 0`};
+  background: ${(props) => `${props.theme.background.tertiary}30`};
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid ${(props) => `${props.theme.font.color.tertiary}10`};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background-color: transparent;
-    &::after {
-      height: 50%;
-    }
+    transform: translateY(-2px);
+    background: ${(props) => `${props.theme.background.green}15`};
+    border-color: ${(props) => `${props.theme.background.green}30`};
+    box-shadow: 0 4px 12px ${(props) => `${props.theme.background.green}10`};
   }
 
   @media (max-width: 440px) {
@@ -38,21 +36,36 @@ const StyledLink = styled(SoundLink)`
   }
 `;
 
-const StyledDiv = styled.div`
-  margin-bottom: ${(props) => props.theme.spacing.base};
+const StyledDate = styled.span`
+  font-size: ${(props) => props.theme.font.size.xs};
+  color: ${(props) => props.theme.font.color.light};
+  font-weight: ${(props) => props.theme.font.weight.regular};
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.font.size.xxs};
+  }
+
+  @media (max-width: 440px) {
+    white-space: normal;
+    text-align: right;
+    line-height: 1.2;
+  }
 `;
 
-type ProfileLinkProps = {
+type HeaderLinkProps = {
   to: string;
-  children: ReactNode;
+  companyName: string;
+  dateRange: string;
 };
 
-export const HeaderLink = ({ to, children }: ProfileLinkProps) => {
+export const HeaderLink = ({ to, companyName, dateRange }: HeaderLinkProps) => {
   return (
-    <StyledDiv>
+    <StyledContainer>
       <StyledLink to={to} target="_blank">
-        {children}
+        {companyName}
       </StyledLink>
-    </StyledDiv>
+      {dateRange && <StyledDate>{dateRange}</StyledDate>}
+    </StyledContainer>
   );
 };

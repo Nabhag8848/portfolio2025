@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
   padding: ${(props) =>
     `${props.theme.spacing["2xl"]} ${props.theme.spacing.base}`};
   color: ${(props) => props.theme.font.color.tertiary};
-  max-width: 120rem;
+  max-width: 60rem;
   margin: 0 auto;
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out forwards;
@@ -128,9 +128,11 @@ export const Portfolio = () => {
         <StyledSection>
           <StyledSubHeader>Experience</StyledSubHeader>
           <StyledSubSection>
-            <HeaderLink to="https://www.rockethealth.app">
-              Rocket Health - ( Sep 2024 - May 2025 )
-            </HeaderLink>
+            <HeaderLink
+              to="https://www.rockethealth.app"
+              companyName="Rocket Health"
+              dateRange="Sep 2024 - May 2025"
+            />
             <StyledSubParagraph>
               Sole engineer behind building entire system powering 100K+ therapy
               sessions and 40K+ users. Built event-driven system integrating
@@ -140,9 +142,11 @@ export const Portfolio = () => {
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
-            <HeaderLink to="https://www.github.com/revertinc/revert">
-              Revert (now Ampersand) - ( May 2024 - Aug 2024 )
-            </HeaderLink>
+            <HeaderLink
+              to="https://www.github.com/revertinc/revert"
+              companyName="Revert (now Ampersand)"
+              dateRange="May 2024 - Aug 2024"
+            />
             <StyledSubParagraph>
               Played a key role in building the new client-side, managing
               production, and leading a full app migration. Contributed to
@@ -153,9 +157,11 @@ export const Portfolio = () => {
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
-            <HeaderLink to="https://summerofcode.withgoogle.com/archive/2023/projects/9v76k7Q8">
-              Google Summer of Code - ( May 2023 - Aug 2023 )
-            </HeaderLink>
+            <HeaderLink
+              to="https://summerofcode.withgoogle.com/archive/2023/projects/9v76k7Q8"
+              companyName="Google Summer of Code"
+              dateRange="May 2023 - Aug 2023"
+            />
             <StyledSubParagraph>
               Built Notion App for Rocket.Chat, enabling seamless collaboration
               by allowing users to create, share, and interact with Notion pages
@@ -166,9 +172,11 @@ export const Portfolio = () => {
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
-            <HeaderLink to="https://github.com/Nabhag8848?tab=overview&from=2023-12-01&to=2023-12-31&org=RocketChat">
-              Rocket.Chat - ( Sep 2022 - May 2024 )
-            </HeaderLink>
+            <HeaderLink
+              to="https://github.com/Nabhag8848?tab=overview&from=2023-12-01&to=2023-12-31&org=RocketChat"
+              companyName="Rocket.Chat"
+              dateRange="Sep 2022 - May 2024"
+            />
             <StyledSubParagraph>
               Contributed to GitHub integration and resolved critical bugs in
               Rocket.Chat. Authored a backward-compatible OAuth2 authorization
@@ -178,9 +186,11 @@ export const Portfolio = () => {
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
-            <HeaderLink to="https://neev.finance/">
-              Neev.Finance - ( May 2022 - Jun 2022 )
-            </HeaderLink>
+            <HeaderLink
+              to="https://neev.finance/"
+              companyName="Neev.Finance"
+              dateRange="May 2022 - Jun 2022"
+            />
             <StyledSubParagraph>
               Developed a real-time crypto analytics dashboard using WebSockets,
               and NestJS (with Observer pattern). Integrated data feeds from
@@ -192,9 +202,11 @@ export const Portfolio = () => {
         <StyledSection>
           <StyledSubHeader>Projects</StyledSubHeader>
           <StyledSubSection>
-            <HeaderLink to="https://www.raycast.com/NabhagMotivaras/twenty">
-              Twenty Raycast Extension
-            </HeaderLink>
+            <HeaderLink
+              to="https://www.raycast.com/NabhagMotivaras/twenty"
+              companyName="Twenty Raycast Extension"
+              dateRange=""
+            />
             <StyledSubParagraph>
               Raycast Extension for seamless twentyCRM management, enabling
               users to instantly create records across both standard and custom
@@ -202,9 +214,11 @@ export const Portfolio = () => {
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
-            <HeaderLink to="https://github.com/Nabhag8848/CoverCraft">
-              CoverCraft - Figma x Hashnode
-            </HeaderLink>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/CoverCraft"
+              companyName="CoverCraft - Figma x Hashnode"
+              dateRange=""
+            />
             <StyledSubParagraph>
               CoverCraft lets you instantly set cover images in Hashnode Blog,
               designed in Figma — no downloads, renaming, or platform switching.
