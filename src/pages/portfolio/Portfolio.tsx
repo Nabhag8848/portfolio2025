@@ -203,6 +203,18 @@ export const Portfolio = () => {
           <StyledSubHeader>Projects</StyledSubHeader>
           <StyledSubSection>
             <HeaderLink
+              to="https://github.com/Nabhag8848/mcp-marketplace"
+              companyName="MCP Marketplace"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Discover MCP servers over the internet. Built with a real-time
+              engine that discovers and syncs MCP servers as they appear in
+              github.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
               to="https://www.raycast.com/NabhagMotivaras/twenty"
               companyName="Twenty Raycast Extension"
               dateRange=""
