@@ -174,7 +174,7 @@ export const Portfolio = () => {
           <StyledSubSection>
             <HeaderLink
               to="https://github.com/Nabhag8848?tab=overview&from=2023-12-01&to=2023-12-31&org=RocketChat"
-              companyName="Rocket.Chat"
+              companyName="Rocket.Chat (contributor)"
               dateRange="Sep 2022 - May 2024"
             />
             <StyledSubParagraph>
