@@ -63,7 +63,8 @@ const StyledParagraph = styled.p`
   letter-spacing: ${(props) => props.theme.text.letterSpacing.wide};
   font-size: ${(props) => props.theme.font.size.xs};
   margin-bottom: ${(props) => props.theme.spacing["2xl"]};
-  max-width: 80ch;
+  width: 100%;
+  text-align: justify;
 `;
 
 const StyledSubParagraph = styled(StyledParagraph)`
