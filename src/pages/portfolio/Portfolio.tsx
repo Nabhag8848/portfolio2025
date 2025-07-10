@@ -216,6 +216,18 @@ export const Portfolio = () => {
           </StyledSubSection>
           <StyledSubSection>
             <HeaderLink
+              to="https://monorepo-architecture.vercel.app"
+              companyName="Monorepo Template"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              NX template with monorepo architecture for building full stack
+              application with nestjs (with TypeORM + Redis), react (with Shadcn
+              + Tailwind) and GraphQL (with Apollo).
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
               to="https://www.raycast.com/NabhagMotivaras/twenty"
               companyName="Twenty Raycast Extension"
               dateRange=""
