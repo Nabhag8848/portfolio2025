@@ -221,8 +221,8 @@ export const Portfolio = () => {
             />
             <StyledSubParagraph>
               NX template with monorepo architecture for building full stack
-              application with NestJS (with TypeORM + Postgres), React (with
-              Shadcn + Tailwind), Redis (including BullMQ) and Apollo GraphQL.
+              application with NestJS (TypeORM + Postgres), React (Shadcn +
+              Tailwind), Redis (including BullMQ) and Apollo GraphQL.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
