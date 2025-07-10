@@ -209,9 +209,8 @@ export const Portfolio = () => {
               dateRange=""
             />
             <StyledSubParagraph>
-              Discover MCP servers over the internet. Built with a real-time
-              engine that discovers and syncs MCP servers as they appear in
-              github.
+              Discover MCP servers over the internet. Built a real-time engine
+              that discovers and sync MCP servers as they appear in Github.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
@@ -222,8 +221,8 @@ export const Portfolio = () => {
             />
             <StyledSubParagraph>
               NX template with monorepo architecture for building full stack
-              application with nestjs (with TypeORM + Redis), react (with Shadcn
-              + Tailwind) and GraphQL (with Apollo).
+              application with NestJS (with TypeORM + Postgres), React (with
+              Shadcn + Tailwind), Redis (including BullMQ) and Apollo GraphQL.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
