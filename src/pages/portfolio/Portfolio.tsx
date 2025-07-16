@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { ProfileLink } from "./ProfileLink";
 import { HeaderLink } from "./HeaderLink";
+import { Link } from "react-router";
 
 const StyledContainer = styled.div`
   padding: ${(props) =>
@@ -29,12 +30,123 @@ const StyledContainer = styled.div`
   }
 `;
 
+const StyledHeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ${(props) => `${props.theme.spacing.lg}`};
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: ${(props) => props.theme.spacing.sm};
+  }
+`;
+
 const StyledHeader = styled.h1`
   color: ${(props) => props.theme.font.color.secondary};
   font-weight: ${(props) => props.theme.font.weight.medium};
   font-size: ${(props) => props.theme.font.size.lg};
-  margin-bottom: ${(props) => `${props.theme.spacing.lg}`};
   letter-spacing: -0.05em;
+  margin: 0;
+`;
+
+const StyledContributionsBadge = styled(Link)`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: ${(props) => props.theme.spacing.xs};
+  padding: ${(props) => `${props.theme.spacing.xs} ${props.theme.spacing.sm}`};
+  background: ${(props) => props.theme.background.tertiary};
+  border: 1px solid ${(props) => `${props.theme.font.color.tertiary}40`};
+  color: ${(props) => props.theme.font.color.secondary};
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: ${(props) => props.theme.font.size.xs};
+  font-weight: ${(props) => props.theme.font.weight.medium};
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 2px ${(props) => `${props.theme.font.color.tertiary}10`};
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: conic-gradient(from 0deg, #10b981, #22c55e, #34d399, #10b981);
+    border-radius: 7px;
+    animation: spin 3s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: 6px;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #22c55e;
+    border-color: #22c55e60;
+    background: ${(props) => `${props.theme.background.tertiary}cc`};
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px #22c55e20,
+      0 2px 4px ${(props) => `${props.theme.font.color.tertiary}20`};
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.font.size.xxs};
+    padding: ${(props) =>
+      `${props.theme.spacing.xxs} ${props.theme.spacing.xs}`};
+  }
+`;
+
+const StyledBadgeIcon = styled.span`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  box-shadow: 0 0 0 2px #22c55e20;
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
 `;
 
 const StyledSubHeading = styled.h2`
@@ -106,7 +218,13 @@ const StyledSubSection = styled.div`
 export const Portfolio = () => {
   return (
     <StyledContainer>
-      <StyledHeader>Nabhag Motivaras</StyledHeader>
+      <StyledHeaderContainer>
+        <StyledHeader>Nabhag Motivaras</StyledHeader>
+        <StyledContributionsBadge to="/contributions">
+          <StyledBadgeIcon />
+          Contributions
+        </StyledContributionsBadge>
+      </StyledHeaderContainer>
       <StyledSubHeading>Full Stack Engineer</StyledSubHeading>
       <StyledNav>
         <ProfileLink to="https://github.com/Nabhag8848">Github</ProfileLink>
