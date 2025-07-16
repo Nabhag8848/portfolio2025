@@ -186,23 +186,6 @@ const StyledLoadingSpinner = styled.div`
   }
 `;
 
-const StyledLoadingText = styled.div`
-  color: ${(props) => props.theme.font.color.tertiary};
-  font-size: ${(props) => props.theme.font.size.base};
-  font-weight: ${(props) => props.theme.font.weight.medium};
-  animation: pulse 2s ease-in-out infinite;
-
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.6;
-    }
-  }
-`;
-
 const StyledLoadingMore = styled.div`
   display: flex;
   align-items: center;
