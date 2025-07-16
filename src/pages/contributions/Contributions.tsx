@@ -164,16 +164,89 @@ const StyledLabelsContainer = styled.div`
 `;
 
 const StyledLoading = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: ${(props) => `${props.theme.spacing["2xl"]}`};
+  gap: ${(props) => `${props.theme.spacing.lg}`};
+`;
+
+const StyledLoadingSpinner = styled.div`
+  font-size: 2rem;
+  animation: spin 1.5s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+const StyledLoadingText = styled.div`
   color: ${(props) => props.theme.font.color.tertiary};
-  text-align: center;
-  padding: ${(props) => `${props.theme.spacing.xl}`};
+  font-size: ${(props) => props.theme.font.size.base};
+  font-weight: ${(props) => props.theme.font.weight.medium};
+  animation: pulse 2s ease-in-out infinite;
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
 `;
 
 const StyledLoadingMore = styled.div`
-  color: ${(props) => props.theme.font.color.light};
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${(props) => `${props.theme.spacing.sm}`};
   padding: ${(props) => `${props.theme.spacing.lg}`};
+  color: ${(props) => props.theme.font.color.light};
   font-size: ${(props) => props.theme.font.size.sm};
+`;
+
+const StyledLoadingDots = styled.div`
+  display: flex;
+  gap: 4px;
+
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: ${(props) => props.theme.background.green};
+    animation: bounce 1.4s ease-in-out infinite;
+
+    &:nth-of-type(1) {
+      animation-delay: -0.32s;
+    }
+    &:nth-of-type(2) {
+      animation-delay: -0.16s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 0;
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    80%,
+    100% {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 `;
 
 const StyledError = styled.div`
@@ -246,7 +319,9 @@ export const Contributions = () => {
       <StyledContainer>
         <StyledHeader>Opensource contributions</StyledHeader>
         <StyledSubHeading>Pull Requests</StyledSubHeading>
-        <StyledLoading>Loading contributions...</StyledLoading>
+        <StyledLoading>
+          <StyledLoadingSpinner>⚙️</StyledLoadingSpinner>
+        </StyledLoading>
       </StyledContainer>
     );
   }
@@ -270,7 +345,13 @@ export const Contributions = () => {
         ))}
 
         {loadingMore && (
-          <StyledLoadingMore>Loading more contributions...</StyledLoadingMore>
+          <StyledLoadingMore>
+            <StyledLoadingDots>
+              <span></span>
+              <span></span>
+              <span></span>
+            </StyledLoadingDots>
+          </StyledLoadingMore>
         )}
 
         {!hasMore && prs.length > 0 && (
