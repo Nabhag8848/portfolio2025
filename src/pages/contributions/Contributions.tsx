@@ -245,6 +245,7 @@ export const Contributions = () => {
     return (
       <StyledContainer>
         <StyledHeader>Opensource contributions</StyledHeader>
+        <StyledSubHeading>Pull Requests</StyledSubHeading>
         <StyledLoading>Loading contributions...</StyledLoading>
       </StyledContainer>
     );

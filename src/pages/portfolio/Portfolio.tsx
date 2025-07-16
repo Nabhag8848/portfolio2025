@@ -58,9 +58,9 @@ const StyledContributionsBadge = styled(Link)`
   align-items: center;
   gap: ${(props) => props.theme.spacing.xs};
   padding: ${(props) => `${props.theme.spacing.xs} ${props.theme.spacing.sm}`};
-  background: ${(props) => props.theme.background.tertiary};
-  border: 1px solid ${(props) => `${props.theme.font.color.tertiary}40`};
-  color: ${(props) => props.theme.font.color.secondary};
+  background: ${(props) => `${props.theme.background.tertiary}cc`};
+  border: 1px solid #22c55e80;
+  color: #22c55e;
   text-decoration: none;
   border-radius: 6px;
   font-size: ${(props) => props.theme.font.size.xs};
@@ -69,55 +69,13 @@ const StyledContributionsBadge = styled(Link)`
   white-space: nowrap;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 1px 2px ${(props) => `${props.theme.font.color.tertiary}10`};
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: conic-gradient(from 0deg, #10b981, #22c55e, #34d399, #10b981);
-    border-radius: 7px;
-    animation: spin 3s linear infinite;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    border-radius: 6px;
-    z-index: -1;
-  }
+  box-shadow: 0 4px 12px #22c55e20,
+    0 2px 4px ${(props) => `${props.theme.font.color.tertiary}20`};
 
   &:hover {
-    color: #22c55e;
-    border-color: #22c55e60;
-    background: ${(props) => `${props.theme.background.tertiary}cc`};
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px #22c55e20,
-      0 2px 4px ${(props) => `${props.theme.font.color.tertiary}20`};
-
-    &::before {
-      opacity: 1;
-    }
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #22c55e30,
+      0 4px 8px ${(props) => `${props.theme.font.color.tertiary}30`};
   }
 
   @media (max-width: 768px) {
