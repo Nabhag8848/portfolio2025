@@ -235,6 +235,20 @@ export const Portfolio = () => {
           </StyledSubSection>
           <StyledSubSection>
             <HeaderLink
+              to="https://github.com/Nabhag8848?tab=overview&from=2023-12-01&to=2023-12-31&org=RocketChat"
+              companyName="Rocket.Chat (contributor)"
+              dateRange="Sep 2022 - May 2024"
+            />
+            <StyledSubParagraph>
+              Contributed to GitHub integration and resolved critical bugs in
+              Rocket.Chat. Authored a backward-compatible OAuth2 authorization
+              approach for RocketChat.Apps, Maintainer of the Notion
+              Integration, and actively supported new contributors through
+              weekly Apps Engine workshops.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
               to="https://summerofcode.withgoogle.com/archive/2023/projects/9v76k7Q8"
               companyName="Google Summer of Code"
               dateRange="May 2023 - Aug 2023"
@@ -246,20 +260,6 @@ export const Portfolio = () => {
               authorization, multi-workspace support, message preservation, and
               in-chat Notion tables viewing — all with a user-centric and
               backward-compatible approach.
-            </StyledSubParagraph>
-          </StyledSubSection>
-          <StyledSubSection>
-            <HeaderLink
-              to="https://github.com/Nabhag8848?tab=overview&from=2023-12-01&to=2023-12-31&org=RocketChat"
-              companyName="Rocket.Chat (contributor)"
-              dateRange="Sep 2022 - May 2024"
-            />
-            <StyledSubParagraph>
-              Contributed to GitHub integration and resolved critical bugs in
-              Rocket.Chat. Authored a backward-compatible OAuth2 authorization
-              approach for RocketChat.Apps, Maintainer of the Notion
-              Integration, and actively supported new contributors through
-              weekly Apps Engine workshops.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
