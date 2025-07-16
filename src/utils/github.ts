@@ -32,6 +32,32 @@ export const isExternalContribution = (pr: GitHubPR): boolean => {
   );
 };
 
+export const isAfterCutoffDate = (pr: GitHubPR): boolean => {
+  const cutoffDate = new Date("2022-08-09T23:59:59Z");
+  const prDate = new Date(pr.created_at);
+  return prDate > cutoffDate;
+};
+
+export const isNotExcludedRepo = (pr: GitHubPR): boolean => {
+  const owner = getRepoOwnerFromUrl(pr.repository_url);
+  const repoName = getRepoNameFromUrl(pr.repository_url);
+
+  // Exclude specific repositories
+  const excludedRepos = [{ owner: "twitter-dev", repo: "test" }];
+
+  return !excludedRepos.some(
+    (excluded) =>
+      owner.toLowerCase() === excluded.owner.toLowerCase() &&
+      repoName.toLowerCase() === excluded.repo.toLowerCase()
+  );
+};
+
+export const isValidContribution = (pr: GitHubPR): boolean => {
+  return (
+    isExternalContribution(pr) && isAfterCutoffDate(pr) && isNotExcludedRepo(pr)
+  );
+};
+
 export const getStatus = (pr: GitHubPR): PRStatus => {
   if (pr.pull_request.merged_at) return "merged";
   return pr.state as PRStatus;
@@ -51,8 +77,8 @@ export const fetchGitHubPage = async (
 
   const data: GitHubResponse = await response.json();
 
-  // Filter out PRs from user's own repositories
-  const filteredItems = data.items.filter(isExternalContribution);
+  // Filter out PRs from user's own repositories and PRs before Aug 9, 2022
+  const filteredItems = data.items.filter(isValidContribution);
 
   return {
     ...data,
