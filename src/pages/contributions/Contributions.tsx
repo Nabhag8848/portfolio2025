@@ -1,5 +1,13 @@
 import styled from "@emotion/styled";
-import { useEffect, useState, useCallback } from "react";
+import { GitHubPR } from "@/types/github";
+import {
+  formatDate,
+  getRepoNameFromUrl,
+  getRepoOwnerFromUrl,
+  getStatus,
+} from "@/utils/github";
+import { useContributions } from "./hooks/useContributions";
+import { useInfiniteScroll } from "./hooks/useInfiniteScroll";
 
 const StyledContainer = styled.div`
   padding: ${(props) =>
@@ -183,177 +191,60 @@ const StyledEndMessage = styled.div`
   margin-top: ${(props) => `${props.theme.spacing.lg}`};
 `;
 
-interface GitHubPR {
-  html_url: string;
-  title: string;
-  state: string;
-  created_at: string;
-  closed_at: string | null;
-  updated_at: string;
-  repository_url: string;
-  labels: Array<{
-    name: string;
-    color: string;
-  }>;
-  pull_request: {
-    merged_at: string | null;
-  };
+interface PRItemProps {
+  pr: GitHubPR;
 }
 
-interface GitHubResponse {
-  items: GitHubPR[];
-  total_count: number;
-}
-
-const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
-
-const getRepoNameFromUrl = (url: string): string => {
-  const parts = url.split("/");
-  return parts[parts.length - 1];
-};
-
-const getRepoOwnerFromUrl = (url: string): string => {
-  const parts = url.split("/");
-  return parts[parts.length - 2];
-};
-
-const isExternalContribution = (pr: GitHubPR): boolean => {
-  const owner = getRepoOwnerFromUrl(pr.repository_url);
-  // Filter out PRs from user's own repositories
-  return (
-    owner.toLowerCase() !== "nabhag8848" && owner.toLowerCase() !== "nabhag9949"
-  );
-};
-
-const getStatus = (pr: GitHubPR): string => {
-  if (pr.pull_request.merged_at) return "merged";
-  return pr.state;
-};
+const PRItem = ({ pr }: PRItemProps) => (
+  <StyledPRContainer>
+    <StyledRepoName>
+      {getRepoOwnerFromUrl(pr.repository_url)}/
+      {getRepoNameFromUrl(pr.repository_url)}
+    </StyledRepoName>
+    <StyledPRHeader>
+      <StyledPRTitle
+        href={pr.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {pr.title}
+      </StyledPRTitle>
+      <StyledPRMeta>
+        <StyledDate>
+          {pr.pull_request.merged_at
+            ? formatDate(pr.pull_request.merged_at)
+            : pr.closed_at
+            ? formatDate(pr.closed_at)
+            : formatDate(pr.created_at)}
+        </StyledDate>
+        <StyledStatus status={getStatus(pr)}>{getStatus(pr)}</StyledStatus>
+      </StyledPRMeta>
+    </StyledPRHeader>
+    {pr.labels.length > 0 && (
+      <StyledLabelsContainer>
+        {pr.labels.map((label) => (
+          <StyledLabel key={label.name}>{label.name}</StyledLabel>
+        ))}
+      </StyledLabelsContainer>
+    )}
+  </StyledPRContainer>
+);
 
 export const Contributions = () => {
-  const [prs, setPrs] = useState<GitHubPR[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [totalCount, setTotalCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+  const { prs, loading, loadingMore, error, hasMore, loadMore } =
+    useContributions();
 
-  const PER_PAGE = 100; // GitHub's default page size
-
-  const fetchPage = useCallback(async (page: number) => {
-    try {
-      const response = await fetch(
-        `https://api.github.com/search/issues?q=author:nabhag8848+is:pr+-user:nabhag9949+is:public&per_page=${PER_PAGE}&page=${page}`
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data: GitHubResponse = await response.json();
-
-      // Filter out PRs from user's own repositories
-      const filteredItems = data.items.filter(isExternalContribution);
-
-      return {
-        ...data,
-        items: filteredItems,
-        filtered_count: filteredItems.length,
-        original_count: data.items.length,
-      };
-    } catch (err) {
-      throw err;
-    }
-  }, []);
-
-  const loadMore = useCallback(async () => {
-    if (loadingMore || !hasMore) return;
-
-    setLoadingMore(true);
-    try {
-      const data = await fetchPage(currentPage + 1);
-
-      setPrs((prev) => [...prev, ...data.items]);
-      setCurrentPage((prev) => prev + 1);
-
-      // More robust end detection
-      const isLastPage = data.original_count < PER_PAGE; // GitHub returned less than full page
-      const noMoreItems = data.items.length === 0; // No filtered items found
-      const reachedGitHubLimit = (currentPage + 1) * PER_PAGE >= 1000; // GitHub search API limit
-
-      if (isLastPage || noMoreItems || reachedGitHubLimit) {
-        setHasMore(false);
-      }
-    } catch (err) {
-      console.error("Error loading more:", err);
-      setError(
-        err instanceof Error ? err.message : "Failed to load more contributions"
-      );
-      setHasMore(false); // Stop trying to load more on error
-    } finally {
-      setLoadingMore(false);
-    }
-  }, [currentPage, loadingMore, hasMore, fetchPage]);
-
-  // Initial load
-  useEffect(() => {
-    const initialLoad = async () => {
-      try {
-        const data = await fetchPage(1);
-        setPrs(data.items);
-        setTotalCount(data.total_count);
-
-        // Check if we should stop after first page
-        const isOnlyPage = data.original_count < PER_PAGE;
-        const noItems = data.items.length === 0;
-
-        if (isOnlyPage || noItems) {
-          setHasMore(false);
-        }
-      } catch (err) {
-        console.error("Error in initial load:", err);
-        setError(
-          err instanceof Error ? err.message : "Failed to fetch contributions"
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    initialLoad();
-  }, [fetchPage]);
-
-  // Scroll event listener
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        !hasMore ||
-        loadingMore ||
-        window.innerHeight + document.documentElement.scrollTop <
-          document.documentElement.offsetHeight - 1000
-      ) {
-        return; // Don't load if no more data, already loading, or not near bottom
-      }
-
-      loadMore();
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [loadMore, hasMore, loadingMore]);
+  useInfiniteScroll({
+    hasMore,
+    isLoading: loadingMore,
+    onLoadMore: loadMore,
+    threshold: 1000,
+  });
 
   if (loading) {
     return (
       <StyledContainer>
-        <StyledHeader>Pull Requests</StyledHeader>
+        <StyledHeader>Opensource contributions</StyledHeader>
         <StyledLoading>Loading contributions...</StyledLoading>
       </StyledContainer>
     );
@@ -362,7 +253,7 @@ export const Contributions = () => {
   if (error && prs.length === 0) {
     return (
       <StyledContainer>
-        <StyledHeader>Pull Requests</StyledHeader>
+        <StyledHeader>Opensource contributions</StyledHeader>
         <StyledError>Error: {error}</StyledError>
       </StyledContainer>
     );
@@ -374,40 +265,7 @@ export const Contributions = () => {
       <StyledSubHeading>Pull Requests</StyledSubHeading>
       <StyledMain>
         {prs.map((pr) => (
-          <StyledPRContainer key={pr.html_url}>
-            <StyledRepoName>
-              {getRepoOwnerFromUrl(pr.repository_url)}/
-              {getRepoNameFromUrl(pr.repository_url)}
-            </StyledRepoName>
-            <StyledPRHeader>
-              <StyledPRTitle
-                href={pr.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {pr.title}
-              </StyledPRTitle>
-              <StyledPRMeta>
-                <StyledDate>
-                  {pr.pull_request.merged_at
-                    ? `${formatDate(pr.pull_request.merged_at)}`
-                    : pr.closed_at
-                    ? `${formatDate(pr.closed_at)}`
-                    : `${formatDate(pr.created_at)}`}
-                </StyledDate>
-                <StyledStatus status={getStatus(pr)}>
-                  {getStatus(pr)}
-                </StyledStatus>
-              </StyledPRMeta>
-            </StyledPRHeader>
-            {pr.labels.length > 0 && (
-              <StyledLabelsContainer>
-                {pr.labels.map((label) => (
-                  <StyledLabel key={label.name}>{label.name}</StyledLabel>
-                ))}
-              </StyledLabelsContainer>
-            )}
-          </StyledPRContainer>
+          <PRItem key={pr.html_url} pr={pr} />
         ))}
 
         {loadingMore && (
@@ -415,7 +273,7 @@ export const Contributions = () => {
         )}
 
         {!hasMore && prs.length > 0 && (
-          <StyledEndMessage>🎉 You've reached the end!.</StyledEndMessage>
+          <StyledEndMessage>🎉 You've reached the end!</StyledEndMessage>
         )}
 
         {!hasMore && prs.length === 0 && (
