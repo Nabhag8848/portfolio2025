@@ -344,7 +344,7 @@ export const Portfolio = () => {
             />
             <StyledSubParagraph>
               Generate memes with AI and send them to your friends right into
-              Rocket.Chat
+              Rocket.Chat.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
