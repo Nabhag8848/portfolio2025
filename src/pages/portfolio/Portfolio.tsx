@@ -280,25 +280,13 @@ export const Portfolio = () => {
           <StyledSubHeader>Projects</StyledSubHeader>
           <StyledSubSection>
             <HeaderLink
-              to="https://github.com/Nabhag8848/mcp-marketplace"
-              companyName="MCP Marketplace"
+              to="https://github.com/Nabhag8848/google-summer-of-code"
+              companyName="Notion Integration for Rocket.Chat"
               dateRange=""
             />
             <StyledSubParagraph>
-              Discover MCP servers over the internet. Built a real-time engine
-              that discovers and sync MCP servers as they appear in Github.
-            </StyledSubParagraph>
-          </StyledSubSection>
-          <StyledSubSection>
-            <HeaderLink
-              to="https://monorepo-architecture.vercel.app"
-              companyName="Monorepo Template"
-              dateRange=""
-            />
-            <StyledSubParagraph>
-              NX template with monorepo architecture for building full stack
-              application with NestJS (TypeORM + Postgres), React (Shadcn +
-              Tailwind), Redis (including BullMQ) and Apollo GraphQL.
+              Built Notion Integration for Rocket.Chat when there was no AI code
+              editors.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
@@ -322,6 +310,29 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               CoverCraft lets you instantly set cover images in Hashnode Blog,
               designed in Figma — no downloads, renaming, or platform switching.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://monorepo-architecture.vercel.app"
+              companyName="Monorepo Template"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              NX template with monorepo architecture for building full stack
+              application with NestJS (TypeORM + Postgres), React (Shadcn +
+              Tailwind), Redis (including BullMQ) and Apollo GraphQL.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/mcp-marketplace"
+              companyName="MCP Marketplace"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Discover MCP servers over the internet. Built a real-time engine
+              that discovers and sync MCP servers as they appear in Github.
             </StyledSubParagraph>
           </StyledSubSection>
         </StyledSection>
