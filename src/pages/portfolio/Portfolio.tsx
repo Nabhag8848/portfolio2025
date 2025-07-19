@@ -349,7 +349,7 @@ export const Portfolio = () => {
           </StyledSubSection>
           <StyledSubSection>
             <HeaderLink
-              to="https://monorepo-architecture.vercel.app"
+              to="https://github.com/Nabhag8848/monorepo-architecture"
               companyName="Monorepo Template"
               dateRange=""
             />
