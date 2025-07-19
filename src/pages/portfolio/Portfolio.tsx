@@ -304,6 +304,18 @@ export const Portfolio = () => {
           </StyledSubSection>
           <StyledSubSection>
             <HeaderLink
+              to="https://github.com/Nabhag8848/openstatus-raycast-extension"
+              companyName="OpenStatus Raycast Extension"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Experience OpenStatus as if it's a native, keep an eye on current
+              status updates, effortlessly create detailed status reports, and
+              update them with lightning speed.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
               to="https://github.com/Nabhag8848/CoverCraft"
               companyName="CoverCraft - Figma x Hashnode"
               dateRange=""
