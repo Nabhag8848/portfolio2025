@@ -336,6 +336,28 @@ export const Portfolio = () => {
               that discovers and sync MCP servers as they appear in Github.
             </StyledSubParagraph>
           </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/yoursTruly.Backend"
+              companyName="AI Integration for Rocket.Chat"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Generate memes with AI and send them to your friends right into
+              Rocket.Chat
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/react-vite-template"
+              companyName="React Vite Template"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              A modern, minimal React template built with Vite, featuring
+              TypeScript, React Router, Emotion, and system-aware theming.
+            </StyledSubParagraph>
+          </StyledSubSection>
         </StyledSection>
       </StyledMain>
     </StyledContainer>
