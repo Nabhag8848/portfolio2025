@@ -286,7 +286,7 @@ export const Portfolio = () => {
             />
             <StyledSubParagraph>
               Built a Notion integration for Rocket.Chat before AI code editors
-              existed, and even after two years, the community still uses my
+              existed, and even after two years, the community still use my
               work as a reference.
             </StyledSubParagraph>
           </StyledSubSection>
