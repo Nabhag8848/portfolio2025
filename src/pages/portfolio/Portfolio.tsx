@@ -285,9 +285,9 @@ export const Portfolio = () => {
               dateRange=""
             />
             <StyledSubParagraph>
-              Built Notion Integration for RocketChat when there was no AI code
-              editors and after 2 years community still takes my work as a
-              reference.
+              Built a Notion integration for Rocket.Chat before AI code editors
+              existed, and even after two years, the community still uses my
+              work as a reference.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
