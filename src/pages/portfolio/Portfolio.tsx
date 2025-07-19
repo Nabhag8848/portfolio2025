@@ -304,18 +304,6 @@ export const Portfolio = () => {
           </StyledSubSection>
           <StyledSubSection>
             <HeaderLink
-              to="https://github.com/Nabhag8848/openstatus-raycast-extension"
-              companyName="OpenStatus Raycast Extension"
-              dateRange=""
-            />
-            <StyledSubParagraph>
-              Experience OpenStatus as if it's a native, keep an eye on current
-              status updates, effortlessly create detailed status reports, and
-              update them with lightning speed.
-            </StyledSubParagraph>
-          </StyledSubSection>
-          <StyledSubSection>
-            <HeaderLink
               to="https://github.com/Nabhag8848/CoverCraft"
               companyName="CoverCraft - Figma x Hashnode"
               dateRange=""
@@ -327,14 +315,14 @@ export const Portfolio = () => {
           </StyledSubSection>
           <StyledSubSection>
             <HeaderLink
-              to="https://monorepo-architecture.vercel.app"
-              companyName="Monorepo Template"
+              to="https://github.com/Nabhag8848/openstatus-raycast-extension"
+              companyName="OpenStatus Raycast Extension"
               dateRange=""
             />
             <StyledSubParagraph>
-              NX template with monorepo architecture for building full stack
-              application with NestJS (TypeORM + Postgres), React (Shadcn +
-              Tailwind), Redis (including BullMQ) and Apollo GraphQL.
+              Experience OpenStatus as if it's a native, keep an eye on current
+              status updates, effortlessly create detailed status reports, and
+              update them with lightning speed.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
@@ -357,6 +345,18 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Generate memes with AI and send them to your friends right into
               Rocket.Chat.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://monorepo-architecture.vercel.app"
+              companyName="Monorepo Template"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              NX template with monorepo architecture for building full stack
+              application with NestJS (TypeORM + Postgres), React (Shadcn +
+              Tailwind), Redis (including BullMQ) and Apollo GraphQL.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
