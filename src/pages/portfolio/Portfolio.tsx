@@ -195,11 +195,11 @@ export const Portfolio = () => {
       <StyledMain>
         <StyledParagraph>
           I began my career by building four integrations for an Investing
-          Monitoring Tool. Since then, have spent years specializing in the
-          work of integrations, which I find demanding cause 90% of
-          SaaS is just building integrations. While my broader expertise is in
-          web engineering, I excel in building integrations, marketplace apps
-          and could be the best choice for your needs.
+          Monitoring Tool. Since then, have spent years specializing in the work
+          of integrations, which I find demanding cause 90% of SaaS is just
+          building integrations. While my broader expertise is in web
+          engineering, I excel in building integrations, marketplace apps and
+          could be the best choice for your needs.
         </StyledParagraph>
         <StyledSection>
           <StyledSubHeader>Experience</StyledSubHeader>
@@ -214,7 +214,21 @@ export const Portfolio = () => {
               sessions and 40K+ users. Built event-driven system integrating
               Typeform, Calendly, and Razorpay; migrated messy legacy data via
               custom scripts; developed internal operation web app; and
-              automated key workflows for seamless operations.
+              automated key workflows for seamless operations. curious about the
+              complexity ? check out{" "}
+              <a
+                href="https://dbdiagram.io/d/Prisma-Generated-66f4e6c53430cb846ca92ea6"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#22c55e",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                db-schema-design
+              </a>
+              .
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
@@ -286,8 +300,8 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Built a Notion integration for Rocket.Chat before AI code editors
               existed, and even after years, the rocketchat community still use
-              my work as a reference for building their own integrations. Check
-              out {" "}
+              my work as a reference for building their own integrations. check
+              out{" "}
               <a
                 href="https://www.figma.com/file/1Tk99mGHBmbQpOiT3vP17i/NotionApp"
                 target="_blank"
