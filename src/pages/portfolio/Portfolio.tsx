@@ -194,13 +194,12 @@ export const Portfolio = () => {
       </StyledNav>
       <StyledMain>
         <StyledParagraph>
-          I began my career in 2022, by building four integrations for an
-          Investing Monitoring Tool. Since then, have spent two years
-          specializing in the challenging work of integrations, which I find
-          demanding cause 90% of SaaS is just building integrations. While my
-          broader expertise is in web engineering, I excel in building
-          integrations, marketplace apps and could be the best choice for your
-          needs.
+          I began my career by building four integrations for an Investing
+          Monitoring Tool. Since then, have spent years specializing in the
+          challenging work of integrations, which I find demanding cause 90% of
+          SaaS is just building integrations. While my broader expertise is in
+          web engineering, I excel in building integrations, marketplace apps
+          and could be the best choice for your needs.
         </StyledParagraph>
         <StyledSection>
           <StyledSubHeader>Experience</StyledSubHeader>
@@ -211,7 +210,7 @@ export const Portfolio = () => {
               dateRange="Sep 2024 - May 2025"
             />
             <StyledSubParagraph>
-              Sole engineer behind building entire system powering 100K+ therapy
+              Sole engineer behind building entire system powering 160K+ therapy
               sessions and 40K+ users. Built event-driven system integrating
               Typeform, Calendly, and Razorpay; migrated messy legacy data via
               custom scripts; developed internal operation web app; and
@@ -286,8 +285,8 @@ export const Portfolio = () => {
             />
             <StyledSubParagraph>
               Built a Notion integration for Rocket.Chat before AI code editors
-              existed, and even after two years, the community still use my
-              work as a reference.
+              existed, and even after years, the rocketchat community still use
+              my work as a reference for building their own integrations.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
