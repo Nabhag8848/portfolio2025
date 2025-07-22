@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
 const StyledLink = styled(SoundLink)`
   font-size: ${(props) => props.theme.font.size.base};
   color: ${(props) => props.theme.font.color.primary};
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: ${(props) => props.theme.font.weight.medium};
   position: relative;
   display: inline-block;

@@ -5,7 +5,7 @@ import { SoundLink } from "@ui/components/SoundLink";
 const StyledLink = styled(SoundLink)`
   font-size: ${(props) => props.theme.font.size.sm};
   color: ${(props) => props.theme.font.color.secondary};
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: ${(props) => props.theme.font.weight.medium};
   padding: ${(props) => `${props.theme.spacing.xs} ${props.theme.spacing.sm}`};
   position: relative;
