@@ -195,7 +195,7 @@ export const Portfolio = () => {
       <StyledMain>
         <StyledParagraph>
           I began my career by building four integrations for an Investing
-          Monitoring Tool. Since then, have spent years specializing in the work
+          Monitoring Tool. Since then, have spent time specializing in the work
           of integrations, which I find demanding cause 90% of SaaS is just
           building integrations. While my broader expertise is in web
           engineering, I excel in building integrations, marketplace apps and
@@ -214,8 +214,7 @@ export const Portfolio = () => {
               sessions and 40K+ users. Built event-driven system integrating
               Typeform, Calendly, and Razorpay; migrated messy legacy data via
               custom scripts; developed internal operation web app; and
-              automated key workflows for seamless operations. curious about the
-              complexity ? check out{" "}
+              automated key workflows for seamless operations.
               <a
                 href="https://dbdiagram.io/d/Prisma-Generated-66f4e6c53430cb846ca92ea6"
                 target="_blank"
@@ -227,8 +226,8 @@ export const Portfolio = () => {
                 }}
               >
                 db-schema-design
-              </a>
-              .
+              </a>{" "}
+              (for reference).
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
@@ -300,17 +299,18 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Built a Notion integration for Rocket.Chat before AI code editors
               existed, and even after years, the rocketchat community still use
-              my work as a reference for building their own integrations. check
-              out{" "}
+              my work as a reference for building their own integrations. I also
+              designed a rough UI mockup in Figma (despite not being a designer
+              just to show before actual product how integration will function)
+              -{" "}
               <a
                 href="https://www.figma.com/file/1Tk99mGHBmbQpOiT3vP17i/NotionApp"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "#22c55e" }}
               >
-                figma-design
+                see the design
               </a>
-              .
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
