@@ -299,7 +299,7 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Built a Notion integration for Rocket.Chat before AI code editors
               existed, and even after years, the rocketchat community still use
-              my work as a reference for building their own integrations. I also
+              my work as a reference for building their own integrations. I
               designed a rough UI mockup in Figma (despite not being a designer
               just to show before actual product how integration will function)
               -{" "}
