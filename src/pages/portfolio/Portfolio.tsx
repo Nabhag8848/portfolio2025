@@ -221,10 +221,10 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Sole engineer behind building entire system powering{" "}
               <strong>160K+ therapy sessions</strong> and{" "}
-              <strong>50K+ users</strong>. Built event-driven system integrating
+              <strong>50K+ users</strong> generates <strong>$1M+ arr</strong>. Built event-driven system integrating
               Typeform, Calendly, and Razorpay; migrated messy legacy data via
-              custom scripts; developed internal operation web app; and
-              automated key workflows for seamless operations.
+              custom scripts; developed operation <strong>RBAC </strong> web
+              app; and automated key workflows for seamless operations.
               <a
                 href="https://dbdiagram.io/d/Prisma-Generated-66f4e6c53430cb846ca92ea6"
                 target="_blank"
@@ -250,9 +250,10 @@ export const Portfolio = () => {
               Played a key role in building the new client-side, managing
               production, and leading a full app migration. Contributed to
               internal CRM SDKs and customized isomorphic JavaScript client SDKs
-              for customer needs. Set up the foundation for a <strong>webhook system</strong> and
-              maintained the codebase during critical periods. Conducted
-              integration code reviews to ensure product stability.
+              for customer needs. Set up the foundation for a{" "}
+              <strong>webhook system</strong> and maintained the codebase during
+              critical periods. Conducted integration code reviews to ensure
+              product stability.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
@@ -265,8 +266,8 @@ export const Portfolio = () => {
               Contributed to GitHub integration and resolved critical bugs in
               Rocket.Chat. Authored a backward-compatible OAuth2 authorization
               approach for RocketChat.Apps, <strong>Maintainer</strong> of the
-              Notion Integration, and actively supported new contributors through
-              weekly Apps Engine workshops.
+              Notion Integration, and actively supported new contributors
+              through weekly Apps Engine workshops.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
