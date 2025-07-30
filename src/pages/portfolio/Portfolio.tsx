@@ -139,6 +139,15 @@ const StyledParagraph = styled.p`
 
 const StyledSubParagraph = styled(StyledParagraph)`
   font-size: ${(props) => props.theme.font.size.xs};
+
+  strong {
+    color: ${(props) => props.theme.font.color.primary};
+    font-weight: ${(props) => props.theme.font.weight.semiBold};
+    background: linear-gradient(135deg, #22c55e20, #22c55e10);
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid #22c55e30;
+  }
 `;
 
 const StyledSubHeader = styled.h3`
@@ -210,8 +219,9 @@ export const Portfolio = () => {
               dateRange="Sep 2024 - May 2025"
             />
             <StyledSubParagraph>
-              Sole engineer behind building entire system powering 160K+ therapy
-              sessions and 40K+ users. Built event-driven system integrating
+              Sole engineer behind building entire system powering{" "}
+              <strong>160K+ therapy sessions</strong> and{" "}
+              <strong>50K+ users</strong>. Built event-driven system integrating
               Typeform, Calendly, and Razorpay; migrated messy legacy data via
               custom scripts; developed internal operation web app; and
               automated key workflows for seamless operations.
@@ -240,7 +250,7 @@ export const Portfolio = () => {
               Played a key role in building the new client-side, managing
               production, and leading a full app migration. Contributed to
               internal CRM SDKs and customized isomorphic JavaScript client SDKs
-              for customer needs. Set up the foundation for a webhook system and
+              for customer needs. Set up the foundation for a <strong>webhook system</strong> and
               maintained the codebase during critical periods. Conducted
               integration code reviews to ensure product stability.
             </StyledSubParagraph>
@@ -254,8 +264,8 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Contributed to GitHub integration and resolved critical bugs in
               Rocket.Chat. Authored a backward-compatible OAuth2 authorization
-              approach for RocketChat.Apps, Maintainer of the Notion
-              Integration, and actively supported new contributors through
+              approach for RocketChat.Apps, <strong>Maintainer</strong> of the
+              Notion Integration, and actively supported new contributors through
               weekly Apps Engine workshops.
             </StyledSubParagraph>
           </StyledSubSection>
@@ -283,8 +293,8 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Developed a real-time crypto analytics dashboard using WebSockets,
               and NestJS (with Observer pattern). Integrated data feeds from
-              four major exchange (FTX, OKX, Binance, Huobi Global) and
-              implemented scheduled data storage using cron jobs.
+              <strong>four major exchanges</strong> (FTX, OKX, Binance, Huobi
+              Global) and implemented scheduled data storage using cron jobs.
             </StyledSubParagraph>
           </StyledSubSection>
         </StyledSection>
