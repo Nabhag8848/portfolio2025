@@ -215,7 +215,7 @@ export const Portfolio = () => {
           <StyledSubSection>
             <HeaderLink
               to="https://nabhag.dev/blog/sabbatical"
-              companyName="Health & Wellbeing Sabbatical"
+              companyName="Health & Wellbeing"
               dateRange="June 2025 – September 2025"
             />
             <StyledSubParagraph>
