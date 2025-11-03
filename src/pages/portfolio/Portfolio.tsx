@@ -214,6 +214,30 @@ export const Portfolio = () => {
           <StyledSubHeader>Experience</StyledSubHeader>
           <StyledSubSection>
             <HeaderLink
+              to="https://nabhag.dev/blog/sabbatical"
+              companyName="Health & Wellbeing Sabbatical"
+              dateRange="June 2025 – September 2025"
+            />
+            <StyledSubParagraph>
+              Prioritized recovery from severe Vitamin D3 and B12 deficiencies.
+              Documented the full journey in a detailed blog —{" "}
+              <a
+                href="https://nabhag.dev/blog/sabbatical"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#22c55e",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                read it here
+              </a>
+              .
+            </StyledSubParagraph>
+          </StyledSubSection>
+
+          <StyledSubSection>
+            <HeaderLink
               to="https://www.rockethealth.app"
               companyName="Rocket Health"
               dateRange="Sep 2024 - May 2025"
@@ -221,10 +245,11 @@ export const Portfolio = () => {
             <StyledSubParagraph>
               Sole engineer behind building entire system powering{" "}
               <strong>160K+ therapy sessions</strong> and{" "}
-              <strong>50K+ users</strong> generates <strong>$1M+ arr</strong>. Built event-driven system integrating
-              Typeform, Calendly, and Razorpay; migrated messy legacy data via
-              custom scripts; developed operation <strong>RBAC </strong> web
-              app; and automated key workflows for seamless operations.
+              <strong>50K+ users</strong> generates <strong>$1M+ arr</strong>.
+              Built event-driven system integrating Typeform, Calendly, and
+              Razorpay; migrated messy legacy data via custom scripts; developed
+              operation <strong>RBAC </strong> web app; and automated key
+              workflows for seamless operations.
               <a
                 href="https://dbdiagram.io/d/Prisma-Generated-66f4e6c53430cb846ca92ea6"
                 target="_blank"
