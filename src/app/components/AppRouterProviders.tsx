@@ -5,6 +5,7 @@ import { ThemeProvider } from "@emotion/react";
 import { THEME_DARK } from "@ui/theme/dark";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { OpenGraphImage } from "@ui/utils/OpenGraphImage";
+import { HelmetProvider } from "react-helmet-async";
 
 export const AppRouterProviders = () => {
   const theme = THEME_DARK;
@@ -14,10 +15,12 @@ export const AppRouterProviders = () => {
   return (
     <ThemeProvider theme={theme}>
       <StrictMode>
-        <PageTitle />
-        <OpenGraphImage />
-        <Outlet />
-        <SpeedInsights />
+        <HelmetProvider>
+          <PageTitle />
+          <OpenGraphImage />
+          <Outlet />
+          <SpeedInsights />
+        </HelmetProvider>
       </StrictMode>
     </ThemeProvider>
   );
