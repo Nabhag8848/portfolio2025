@@ -216,7 +216,7 @@ export const Portfolio = () => {
             <HeaderLink
               to="https://nabhag.dev/blog/sabbatical"
               companyName="Health & Wellbeing"
-              dateRange="June 2025 – September 2025"
+              dateRange="June 2025 – October 2025"
             />
             <StyledSubParagraph>
               Prioritized recovery from severe Vitamin D3 and B12 deficiencies.
