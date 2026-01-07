@@ -224,6 +224,25 @@ const StyledCloseButton = styled.button`
   }
 `;
 
+const StyledTweetContainer = styled.div`
+  margin: ${(props) => props.theme.spacing.lg} 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  iframe {
+    border-radius: 8px;
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    min-height: 400px;
+
+    @media (max-width: 768px) {
+      min-height: 300px;
+    }
+  }
+`;
+
 export const Sabbatical = () => {
   const [lightbox, setLightbox] = useState<null | {
     src: string;
@@ -366,7 +385,9 @@ export const Sabbatical = () => {
           >
             reference
           </StyledLink>
-          ) . I studied things I'd always wanted to understand better.
+          ). As my memory was unreliable and I wasn't able to study really deep
+          technical topics, I focused on things I'd always wanted to understand
+          better.
         </StyledParagraph>
         <StyledParagraph>
           I also documented parts of my journey as I started feeling better in
@@ -381,7 +402,7 @@ export const Sabbatical = () => {
           .
         </StyledParagraph>
         <StyledParagraph>
-          In parallel, I kept coding to stay in flow. One of the highlights?
+          In parallel, I kept coding to stay in flow. Two highlights stand out:
         </StyledParagraph>
         <StyledParagraph>
           I built a Chrome extension for TwentyCRM that scrapes lead data from
@@ -397,9 +418,34 @@ export const Sabbatical = () => {
           )
         </StyledParagraph>
         <StyledParagraph>
-          It was a simple but useful reminder: I may be resting, but I'm still a
-          builder at heart.
+          I also built LYO, a virtual fitting room that lets you try outfits
+          before you buy, right in your browser. It works as a browser extension
+          for Myntra, allowing users to upload their photo once and see how
+          clothes look on them instantly. The extension generates multiple
+          avatars from a single photo and overlays clothing items from Myntra,
+          creating a seamless virtual try-on experience that helps shoppers make
+          confident purchasing decisions. (
+          <StyledLink
+            href="https://lyo.fashion"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            reference
+          </StyledLink>
+          ) — check out a quick live demo below.
         </StyledParagraph>
+        <StyledTweetContainer>
+          <iframe
+            src="https://platform.twitter.com/embed/Tweet.html?id=2008835655355551829&theme=dark&dnt=true"
+            width="550"
+            height="800"
+            frameBorder="0"
+            scrolling="no"
+            allowTransparency={true}
+            allow="encrypted-media"
+            title="Twitter Tweet"
+          />
+        </StyledTweetContainer>
       </StyledSection>
 
       <StyledSection>

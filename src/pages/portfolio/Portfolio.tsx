@@ -216,7 +216,7 @@ export const Portfolio = () => {
             <HeaderLink
               to="https://nabhag.dev/blog/sabbatical"
               companyName="Health & Wellbeing"
-              dateRange="Jun 2025 – Oct 2025"
+              dateRange="Jun 2025 – Nov 2025"
             />
             <StyledSubParagraph>
               Prioritized recovery from severe Vitamin D3 and B12 deficiencies.
@@ -328,6 +328,33 @@ export const Portfolio = () => {
           <StyledSubHeader>Projects</StyledSubHeader>
           <StyledSubSection>
             <HeaderLink
+              to="https://lyo.fashion"
+              companyName="LYO - Virtual Fitting Room"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              A virtual fitting room that lets you try outfits before you buy,
+              right in your browser. Works as a browser extension for Myntra,
+              allowing users to upload their photo once and see how clothes look
+              on them instantly. The extension generates multiple avatars from a
+              single photo and overlays garments on selected avatar, creating a
+              seamless virtual try-on experience.{" "}
+              <a
+                href="https://x.com/NabhagMotivaras/status/2008835655355551829?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#22c55e",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                see live demo
+              </a>
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
               to="https://github.com/Nabhag8848/google-summer-of-code"
               companyName="Notion Integration for Rocket.Chat"
               dateRange=""
@@ -359,6 +386,17 @@ export const Portfolio = () => {
               Raycast Extension for seamless twentyCRM management, enabling
               users to instantly create records across both standard and custom
               objects.
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/nearby-clinics"
+              companyName="Nearby Clinics"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Inhouse service which lets you find nearby-clinics with their
+              doctors based on your location.
             </StyledSubParagraph>
           </StyledSubSection>
           <StyledSubSection>
