@@ -3,6 +3,7 @@ enum PageTitle {
   ABOUT = "About me",
   CONTRIBUTIONS = "Contributions",
   SABBATICAL = "Sabbatical",
+  RESUME = "Resume",
 }
 
 export enum AppPath {
@@ -10,6 +11,7 @@ export enum AppPath {
   ABOUT = "/about",
   CONTRIBUTIONS = "/contributions",
   SABBATICAL = "/blog/sabbatical",
+  RESUME = "/resume",
 }
 
 export const getPageTitleFromPath = (pathname: string): string => {
@@ -22,6 +24,8 @@ export const getPageTitleFromPath = (pathname: string): string => {
       return PageTitle.CONTRIBUTIONS;
     case AppPath.SABBATICAL:
       return PageTitle.SABBATICAL;
+    case AppPath.RESUME:
+      return PageTitle.RESUME;
     default:
       return "Nabhag Motivaras";
   }
