@@ -5,6 +5,7 @@ import { Resume } from "@/pages/resume/Resume";
 import { GithubRedirect } from "@/pages/redirects/GithubRedirect";
 import { LinkedInRedirect } from "@/pages/redirects/LinkedInRedirect";
 import { TwitterRedirect } from "@/pages/redirects/TwitterRedirect";
+import { LyoArchitectureRedirect } from "@/pages/redirects/LyoArchitectureRedirect";
 import { AppRouterProviders } from "@app/components/AppRouterProviders";
 import { DefaultLayout } from "@ui/layout/components/DefaultLayout";
 import { AppPath } from "@utils/title";
@@ -26,6 +27,7 @@ export const useCreateRouter = () => {
         <Route path="/github" element={<GithubRedirect />} />
         <Route path="/linkedin" element={<LinkedInRedirect />} />
         <Route path="/twitter" element={<TwitterRedirect />} />
+        <Route path="/lyo-architecture" element={<LyoArchitectureRedirect />} />
       </Route>
     )
   );
