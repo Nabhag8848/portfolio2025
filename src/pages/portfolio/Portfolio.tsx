@@ -69,12 +69,14 @@ const StyledContributionsBadge = styled(Link)`
   white-space: nowrap;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 12px #22c55e20,
+  box-shadow:
+    0 4px 12px #22c55e20,
     0 2px 4px ${(props) => `${props.theme.font.color.tertiary}20`};
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px #22c55e30,
+    box-shadow:
+      0 6px 16px #22c55e30,
       0 4px 8px ${(props) => `${props.theme.font.color.tertiary}30`};
   }
 
@@ -349,7 +351,32 @@ export const Portfolio = () => {
                   fontWeight: "bold",
                 }}
               >
-                see live demo
+                see demo
+              </a>
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/quickbooks-integration"
+              companyName="Quickbooks Integration"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Extensible integration service for syncing third-party data
+              (initial backfill and incremental sync) over OAuth2 with refresh
+              tokens and background job processing, using QuickBooks Online as
+              the reference provider.
+              <a
+                href="https://github.com/Nabhag8848/quickbooks-integration"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#22c55e",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                see demo
               </a>
             </StyledSubParagraph>
           </StyledSubSection>
