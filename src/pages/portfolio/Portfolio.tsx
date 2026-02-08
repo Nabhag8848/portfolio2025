@@ -358,16 +358,40 @@ export const Portfolio = () => {
           <StyledSubSection>
             <HeaderLink
               to="https://github.com/Nabhag8848/quickbooks-integration"
-              companyName="Quickbooks Integration"
+              companyName="Financial Integration Service"
               dateRange=""
             />
             <StyledSubParagraph>
               Extensible integration service for syncing third-party data
               (initial backfill and incremental sync) over OAuth2 with refresh
-              tokens and background job processing, using QuickBooks Online as
-              the reference provider.
+              tokens and background job processing through a unified provider
+              adapter contract.
               <a
                 href="https://github.com/Nabhag8848/quickbooks-integration"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#22c55e",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                see demo
+              </a>
+            </StyledSubParagraph>
+          </StyledSubSection>
+          <StyledSubSection>
+            <HeaderLink
+              to="https://github.com/Nabhag8848/ups-integration-service"
+              companyName="Carrier Integration Service"
+              dateRange=""
+            />
+            <StyledSubParagraph>
+              Carrier integration service for fetching shipping rate quotes
+              through carrier-specific adapters (currently UPS) using a unified
+              API contract.
+              <a
+                href="https://github.com/Nabhag8848/ups-integration-service"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
