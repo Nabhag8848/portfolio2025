@@ -5,17 +5,26 @@ function GenericProject({ project, onBack }) {
     <div>
       <div className="overview">
         <HeaderTop project={project} onBack={onBack} />
-        <div className="project-media">
-          {project.type === "video" ? (
-            <video src={project.src} width="100%" muted autoPlay loop playsInline />
-          ) : project.type === "image" || project.image ? (
-            <img alt={project.desc} src={project.src || project.image} width="100%" />
-          ) : (
-            <div className="asset-placeholder">
-              {project.title} — add project asset here
-            </div>
-          )}
-        </div>
+        {project.type !== "placeholder" && (
+          <div className="project-media">
+            {project.type === "video" ? (
+              <video
+                src={project.src}
+                width="100%"
+                muted
+                autoPlay
+                loop
+                playsInline
+              />
+            ) : project.type === "image" || project.image ? (
+              <img
+                alt={project.desc}
+                src={project.src || project.image}
+                width="100%"
+              />
+            ) : null}
+          </div>
+        )}
       </div>
 
       <div className="divider" />
