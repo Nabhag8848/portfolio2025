@@ -46,6 +46,17 @@ function MiddleColumn() {
 
         <div className="experience-item">
           <div className="experience-header">
+            <span className="experience-company">Applied AI Consultant</span>
+            <span className="experience-date">Dec 2025 – present</span>
+          </div>
+          <p className="experience-desc">
+            Helping companies automate complex workflows by orchestrating
+            agents.
+          </p>
+        </div>
+
+        <div className="experience-item">
+          <div className="experience-header">
             <Link className="experience-company" to="/blog/sabbatical">
               Health & Wellbeing
             </Link>
