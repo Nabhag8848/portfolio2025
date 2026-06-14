@@ -36,6 +36,13 @@ function LeftColumn() {
             >
               LinkedIn
             </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://leetcode.com/u/NabhagMotivaras/"
+            >
+              LeetCode
+            </a>
             <a href="mailto:motivaras.nabhag@gmail.com">Mail</a>
           </span>
         </div>
